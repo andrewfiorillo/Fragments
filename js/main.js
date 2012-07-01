@@ -89,7 +89,7 @@ var img = {
 	
 	
 	getParams: function() {
-		var pairs = window.location.hash.replace("#","").split("&");
+		var pairs = window.location.hash.replace("#","").split("&"),
 		var params = {};
 		
 		for(var i=0; i < pairs.length; i++) {
@@ -97,37 +97,18 @@ var img = {
 			params[pair[0]] = pair[1];
 		}
 		
-		console.log(params);
-		
 		var sliders = ["imageurl", "imagesize", "tilesize", "tilemargin", "radius", "tiletint", "tiletintop", "rotate", "blur"];
 		var radios = ["opjitter", "random"];
 		
 		for(var i = 0; i < sliders.length; i++) {
 			if(params[sliders[i]]) {
-				$("#" + sliders[i]).val(params[sliders[i]]).prev("label").children(".count").text(params[sliders[i]]);
+				$("#" + sliders[i])
+					.val(params[sliders[i]])
+					.prev("label")
+					.children(".count")
+					.text(params[sliders[i]]);
 			}
 		}
-		
-		/*
-		for(var i = 0; i < radios.length; i++) {
-			
-			console.log(params[radios[i]]);
-			console.log(radios[i]);
-		
-
-				if (params[radios[i]] == "on") {
-					$("#" + radios[i] + "on").attr('checked', true);
-					$("#" + radios[i] + "off").attr('checked', false);
-				}
-				else {
-					$("#" + radios[i] + "on").attr('checked', false);
-					$("#" + radios[i] + "off").attr('checked', true);
-				}
-
-		}
-		*/
-		
-
 		
 		if(params.opjitter)	{
 			if (params.opjitter == "on") $("#opjitteron").attr('checked', true);
@@ -137,8 +118,6 @@ var img = {
 			if (params.random == "on") $("#randomon").attr('checked', true);
 			else $("#randomoff").attr('checked', true);
 		}
-		
-
 
 	},
 	
@@ -288,7 +267,6 @@ var img = {
 				this.chunks.push({x:xpos,y:ypos});
 			}	
 		}
-		
 		
 		
 		// figure out if image is landscape or portrait and set background-size accordingly
