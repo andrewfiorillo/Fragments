@@ -1,0 +1,258 @@
+body {
+	background: white;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	color: #555;
+	font-size: 12px;
+	line-height: 20px;
+	margin: 0;
+}
+#sidebar {
+	width: 200px;
+	background: #eee;
+	padding: 15px 25px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+	z-index: 200;
+}
+.closed #sidebar {
+	display: none;
+}
+#randoform {
+	position: relative;
+}
+#randoform .field {
+	margin-bottom: 10px;
+}
+#randoform label {
+	display: block;
+	margin-bottom: 2px;
+	vertical-align: middle;
+	color: #aaa;
+}
+#randoform input[type=text] {
+	width: 100%;
+	height: 26px;
+	padding: 7px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	background: white;
+	border: 0;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	color: #aaa;
+}
+#randoform input[type=text]:focus {
+	outline: 0;
+}
+#randoform input#imageurl {
+
+}
+#randoform input#tiletintop {
+	width: 40px;
+	margin-right: 0;
+}
+#randoform input[type=submit] {
+	margin: 0;
+	width: 100%;
+	background: #aaa;
+	padding: 0;
+	color: white;
+	border: 0;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+	height: 26px;
+	padding-bottom: 1px;
+}
+#randoform input[type=submit]:hover,
+#randoform input[type=submit]:focus {
+	background: #999;
+	outline: 0;
+}
+#randoform input[type=submit]:active {
+	background: #888;
+}
+#randoform span.more {
+	background: #aaa;
+	width: 26px;
+	height: 26px;
+	border-left: 10px solid #eee;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 26px;
+	font-size: 9px;
+	color: white;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+}
+#randoform span.more:hover {
+	background: #999;
+}
+#randoform span.more #more_list {
+	background: #999;
+	padding: 15px;
+	position: absolute;
+	right: 0;
+	top: 26px;
+	min-width: 155px;
+	text-align: left;
+	line-height: 20px;
+	font-size: 12px;
+	display: none;
+	color: white;
+	cursor: default;
+	white-space: nowrap;
+	z-index: 10;
+}
+#randoform span.more:hover #more_list {
+	display: block;
+}
+#randoform span.more #more_list ul {
+	padding-left: 15px;
+	padding-bottom: 5px;
+}
+#randoform span.more #more_list ul li {
+	list-style-type: square;
+	list-style-position: outside;
+}
+#randoform span.more #more_list a {
+	color: white;
+	text-decoration: none;
+}
+#randoform span.more #more_list a:hover {
+	text-decoration: underline;
+}
+#randoform .slider_wrapper {
+	background: white;
+	width: 100%;
+	height: 26px;
+}
+#randoform .slider_wrapper .slider_control {
+	margin: 0 7px;
+	background: none;
+	border: 0;
+	height: auto;
+}
+#randoform .slider_wrapper .slider_control a {
+	width: 14px;
+	height: 26px;
+	border: 0;
+	background: #aaa;
+	border-radius: 0;
+	margin-left: -7px;
+	top: 0;
+	cursor: pointer;
+}
+#randoform .slider_wrapper .slider_control a:hover {
+	background: #999;
+}
+#randoform .slider_wrapper .slider_control a.ui-state-focus {
+	background: #999;
+}
+#randoform .ui-button {
+	background: white;
+	border: 0;
+	font-size: 11px;
+	height: 26px;
+	border-radius: 0;
+	font-family: Helvetica Neue, Helvetica, Sans-serif;
+}
+#randoform .ui-button .ui-button-text {
+	font-weight: normal;
+	line-height: 26px;
+	padding: 0 10px;;
+	color: #aaa;
+}
+#randoform .ui-state-active {
+	background: #aaa;
+}
+#randoform .ui-state-active .ui-button-text {
+	color: white;
+}
+#randoform .ui-button.ui-state-focus {
+	background: #999;
+}
+#randoform .radio {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 26px;
+	line-height: 26px;
+}
+#randoform .radio + .radio {
+	padding-top: 0;
+}
+#randoform .radio .buttonset {
+	float: right;
+	margin-right: 3px;
+}
+#randoform .miniColors-trigger {
+	/* display: none; */
+}
+.note {
+	font-size: 11px;
+	color: #aaa;
+	font-style: italic;
+}
+#randoform label.note {
+	width: auto;
+	color: #555;
+	font-style: normal;
+	display: inline-block;
+}
+#randomized {
+	margin-left: 250px;
+}
+.closed #randomized {
+	margin-left: 0;
+}
+.img_wrap {
+	margin: 100px auto;
+	position: relative;
+}
+.img_wrap .tile {
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.img_wrap .tilebg {
+
+}
+.img_wrap .tint {
+	width: 100px;
+	height: 100px;
+	background: red;
+	opacity: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+
+#control_toggle {
+	left: 250px;
+	position: fixed;
+	background: #eee;
+	height: 26px;
+	line-height: 27px;
+	text-align: center;
+	width: 26px;
+	top: 50%;
+	margin-top: -13px;
+	cursor: pointer;
+	color: #aaa;
+	font-family: Helvetica, sans-serif;
+	z-index: 200;
+}
+#control_toggle:hover {
+	background: #e6e6e6;
+}
+.closed #control_toggle {
+	left: 0;
+}
+
+
