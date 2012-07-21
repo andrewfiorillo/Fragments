@@ -90,7 +90,7 @@ var img = {
 	
 	getParams: function() {
 		var pairs = window.location.hash.replace("#","").split("&"),
-		var params = {};
+			params = {};
 		
 		for(var i=0; i < pairs.length; i++) {
 			var pair = pairs[i].split("=");
