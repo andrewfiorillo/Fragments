@@ -8,7 +8,7 @@ body {
 }
 #sidebar {
 	width: 200px;
-	background: #eee;
+	background: #fff;
 	padding: 15px 25px;
 	position: fixed;
 	left: 0;
@@ -16,6 +16,8 @@ body {
 	bottom: 0;
 	overflow: auto;
 	z-index: 200;
+	border-right: 1px solid #ddd;
+	box-shadow: 0 0 4px rgba(0,0,0,0.15);
 }
 .closed #sidebar {
 	display: none;
@@ -35,7 +37,7 @@ body {
 #randoform input[type=text],
 #randoform input[type=number] {
 	width: 100%;
-	height: 26px;
+	height: 28px;
 	padding: 7px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -44,6 +46,8 @@ body {
 	border: 0;
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 	color: #aaa;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
 }
 #randoform input[type=text]:focus,
 #randoform input[type=number]:focus {
@@ -57,39 +61,48 @@ body {
 #randoform input[type=submit] {
 	margin: 0;
 	width: 100%;
-	background: #aaa;
+	background: #fff;
 	padding: 0;
-	color: white;
+	color: #aaa;
 	border: 0;
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 	font-weight: bold;
 	cursor: pointer;
 	text-transform: uppercase;
-	height: 26px;
+	height: 28px;
 	padding-bottom: 1px;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.075);
 }
 #randoform input[type=submit]:hover,
 #randoform input[type=submit]:focus {
-	background: #999;
 	outline: 0;
 }
 #randoform input[type=submit]:active {
-	background: #888;
+	background: #f9f9f9;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.075) inset;
+}
+#randoform input[type=radio] {
+	
+}
+#randoform #imageurl {
+	width: 163px;
 }
 #randoform span.more {
-	background: #aaa;
+	background: white;
 	width: 26px;
 	height: 26px;
-	border-left: 10px solid #eee;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 	line-height: 26px;
 	font-size: 9px;
-	color: white;
+	color: #ddd;
 	cursor: pointer;
 	position: absolute;
 	right: 0;
+	display: block;
+	border: 1px solid #ddd;
 }
 #randoform span.more:hover {
 	background: #999;
@@ -128,65 +141,6 @@ body {
 #randoform span.more #more_list a:hover {
 	text-decoration: underline;
 }
-#randoform .slider_wrapper {
-	background: white;
-	width: 100%;
-	height: 26px;
-}
-#randoform .slider_wrapper .slider_control {
-	margin: 0 7px;
-	background: none;
-	border: 0;
-	height: auto;
-}
-#randoform .slider_wrapper .slider_control a {
-	width: 14px;
-	height: 26px;
-	border: 0;
-	background: #aaa;
-	border-radius: 0;
-	margin-left: -7px;
-	top: 0;
-	cursor: pointer;
-}
-#randoform .slider_wrapper .slider_control a:hover {
-	background: #999;
-}
-#randoform .slider_wrapper .slider_control a.ui-state-focus {
-	background: #999;
-}
-#randoform .ui-button {
-	background: white;
-	border: 0;
-	font-size: 11px;
-	height: 26px;
-	border-radius: 0;
-	font-family: Helvetica Neue, Helvetica, Sans-serif;
-}
-#randoform .ui-button .ui-button-text {
-	font-weight: normal;
-	line-height: 26px;
-	padding: 0 10px;;
-	color: #aaa;
-}
-#randoform .ui-state-active {
-	background: #aaa;
-}
-#randoform .ui-state-active .ui-button-text {
-	color: white;
-}
-#randoform .ui-button.ui-state-focus {
-	background: #999;
-}
-#randoform .radio {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	height: 26px;
-	line-height: 26px;
-}
-#randoform .radio + .radio {
-	padding-top: 0;
-}
 #randoform .radio .buttonset {
 	float: right;
 	margin-right: 3px;
@@ -201,7 +155,6 @@ body {
 }
 #randoform label.note {
 	width: auto;
-	color: #555;
 	font-style: normal;
 	display: inline-block;
 }
@@ -236,7 +189,7 @@ body {
 #control_toggle {
 	left: 250px;
 	position: fixed;
-	background: #eee;
+	background: #fff;
 	height: 26px;
 	line-height: 27px;
 	text-align: center;
@@ -247,9 +200,12 @@ body {
 	color: #aaa;
 	font-family: Helvetica, sans-serif;
 	z-index: 200;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
-#control_toggle:hover {
-	background: #e6e6e6;
+#control_toggle:active {
+	background: #f9f9f9;
 }
 .closed #control_toggle {
 	left: 0;

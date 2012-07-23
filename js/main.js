@@ -6,7 +6,7 @@ var img = {
 		
 		this.getParams();
 		this.colors();
-		this.radios();
+		//this.radios();
 		this.listen();
 		this.keyboard();
 		this.presets();
