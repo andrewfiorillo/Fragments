@@ -8,7 +8,6 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link type="text/css" href="css/ui-lightness/jquery-ui.css" rel="Stylesheet" />	
 	<link rel="stylesheet" type="text/css" href="css/colorpicker.css" />
 	
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -41,53 +40,55 @@
 						</ul>
 					</div>
 				</span>
-				<input type="text" name="imageurl" id="imageurl" class="plain" value="images/presets/sunset.jpg" />
+				<input type="text" name="imageurl" id="imageurl" class="plain" value="images/presets/sunset.jpg" tabindex="100" />
 			</div>
 			
 			<div class="field">
 				<label for="imagesize">Image size <!-- <strong class="count">400</strong> --></label>
-				<input type="number" name="imagesize" id="imagesize" class="plain" value="500" />
+				<input type="number" name="imagesize" id="imagesize" class="plain" value="500" step="50" min="100" tabindex="200" />
 			</div>
 			
 			<div class="field">
 				<label for="tilesize">Tile size <!-- <strong class="count">80</strong> --></label>
-				<input type="number" name="tilesize" id="tilesize" class="plain" value="50" />
+				<input type="number" name="tilesize" id="tilesize" class="plain" value="50" step="10" min="10" tabindex="300" />
 			</div>
 			
 			<div class="field">
 				<label>Margin</label>
-				<input type="number" name="tilemargin" id="tilemargin" class="plain" value="5" />
+				<input type="number" name="tilemargin" id="tilemargin" class="plain" value="5" tabindex="400" />
 			</div>
 			
 			<div class="field">
 				<label>Border-radius</label>
-				<input type="number" name="radius" id="radius" class="plain" value="0" />
+				<input type="number" name="radius" id="radius" class="plain" value="0" min="0" tabindex="500" />
 			</div>
 			
 			<div class="field">
 				<label style="display:inline-block">Tint &nbsp;&nbsp;Color:</label>
 				<input type="hidden" name="tiletint" id="tiletint" class="plain" value="red" />
 				<br />
-				<input type="number" name="tiletintop" id="tiletintop" class="plain" value="0" />
+				<input type="number" name="tiletintop" id="tiletintop" class="plain" value="0" step="0.1" min="0" tabindex="600" />
 			</div>
 			
 			<div class="field">
 				<label>Rotate</label>
-				<input type="number" name="rotate" id="rotate" class="plain" value="0" />
+				<input type="number" name="rotate" id="rotate" class="plain" value="0" step="15" tabindex="600" />
 			</div>
 			
 			<div class="field" style="display:none;" id="blurfield">
 				<label>Blur</label>
-				<input type="number" name="blur" id="blur" class="plain" value="0" />
+				<input type="number" name="blur" id="blur" class="plain" value="0" tabindex="700" />
 			</div>
+			
+			<br />
 			
 			<div class="field radio">
 				<label style="display:inline-block;">Opacity jitter</label>
 				<span class="buttonset">
-					<input type="radio" name="opjitter" id="opjitteron" value="on" />
+					<input type="radio" name="opjitter" id="opjitteron" value="on" tabindex="800" />
 					<label for="opjitteron" class="note">On</label>
 					&nbsp; 
-					<input type="radio" name="opjitter" id="opjitteroff" value="off" checked="yes" />
+					<input type="radio" name="opjitter" id="opjitteroff" value="off" checked="yes" tabindex="800" />
 					<label for="opjitteroff" class="note">Off</label>
 				</span>
 			</div>
@@ -95,10 +96,10 @@
 			<div class="field radio">
 				<label style="display:inline-block;">Randomize</label>
 				<span class="buttonset">
-					<input type="radio" name="random" id="randomon" value="on" checked="yes" />
+					<input type="radio" name="random" id="randomon" value="on" checked="yes" tabindex="900" />
 					<label for="randomon" class="note">On</label>
 					&nbsp;
-					<input type="radio" name="random" id="randomoff" value="off" />
+					<input type="radio" name="random" id="randomoff" value="off" tabindex="900" />
 					<label for="randomoff" class="note">Off</label>
 				</span>
 			</div>
@@ -111,7 +112,7 @@
 		
 	</div>
 	
-	<div id="control_toggle">|||</div>
+	<div id="control_toggle"><span class="cover"></span>|||</div>
 
 	<div id="randomized"></div>
 
