@@ -3,10 +3,8 @@ var img = {
 	// get this party started
 
 	initialize: function() {
-		
 		this.getParams();
 		this.colors();
-		//this.radios();
 		this.listen();
 		this.keyboard();
 		this.presets();
@@ -15,14 +13,12 @@ var img = {
 		if ($.browser.mozilla) $('#blurfield').show();
 		
 		$("#randosubmit").click();
-
 	},
 	
 	
 	// set all vars
 	
 	vars: function() {
-
 		this.url		= $("#imageurl").val();
 		this.imagesize	= $("#imagesize").val() || 600;
 		this.tilesize	= parseInt($("#tilesize").val()) || this.imagesize;
@@ -50,7 +46,6 @@ var img = {
 		this.height		= "";
 		this.html		= document.createElement("div");
 		this.tmp_img	= $('<img />');
-
 	},
 	
 	
@@ -88,6 +83,8 @@ var img = {
 	},
 	
 	
+	// pull params from url and set appropriate values
+	
 	getParams: function() {
 		var pairs = window.location.hash.replace("#","").split("&"),
 			params = {};
@@ -112,27 +109,26 @@ var img = {
 			if (params.random == "on") $("#randomon").attr('checked', true);
 			else $("#randomoff").attr('checked', true);
 		}
-
 	},
 	
 	
+	// set params in url from current settings
+	
 	setParams: function() {
-		
-		var params = [
-			{ key: "imageurl",		val: this.url },
-			{ key: "imagesize",		val: this.imagesize	},
-			{ key: "tilesize",		val: this.tilesize },
-			{ key: "tilemargin",	val: this.tilemargin },
-			{ key: "radius",		val: this.radius },
-			{ key: "tiletint",		val: this.tiletint },
-			{ key: "tiletintop",	val: this.tiletintop },
-			{ key: "rotate",		val: this.rotate },
-			{ key: "blur", 			val: this.blur },
-			{ key: "opjitter",		val: this.opjitter },
-			{ key: "random",		val: this.random }
-		];
-
-		var paramStr = "";
+		var paramStr = "",
+			params = [
+				{ key: "imageurl",		val: this.url },
+				{ key: "imagesize",		val: this.imagesize	},
+				{ key: "tilesize",		val: this.tilesize },
+				{ key: "tilemargin",	val: this.tilemargin },
+				{ key: "radius",		val: this.radius },
+				{ key: "tiletint",		val: this.tiletint },
+				{ key: "tiletintop",	val: this.tiletintop },
+				{ key: "rotate",		val: this.rotate },
+				{ key: "blur", 			val: this.blur },
+				{ key: "opjitter",		val: this.opjitter },
+				{ key: "random",		val: this.random }
+			];
 		
 		for (var i = 0; i < params.length; i++) {
 			if (i > 0 ) paramStr += "&";
@@ -140,7 +136,6 @@ var img = {
 		}
 		
 		window.location.hash = paramStr;
-		
 	},
 	
 	
@@ -174,13 +169,6 @@ var img = {
 		});	
 	},
 	
-
-	// set up radio buttons
-
-	radios: function() {
-		$(".buttonset").buttonset();
-	},
-	
 	
 	// initialize simple color picker dropdown
 	
@@ -204,19 +192,16 @@ var img = {
 				var ypos = i * this.tilesize;
 				this.chunks.push({x:xpos,y:ypos});
 			}	
-		}
-		
+		}	
 		
 		// figure out if image is landscape or portrait and set background-size accordingly
 		
 		if 	(this.width <= this.height)	this.bgsize = this.imagesize + "px auto";
 		else 							this.bgsize	= "auto " + this.imagesize + "px";
 		
-		
 		// option: randomize tiles
 		
 		if (this.random == "on") util.shuffle(this.chunks);
-		
 
 		// option: blur (firefox only)
 		
@@ -234,7 +219,6 @@ var img = {
 			');
 		}
 		
-		
 		// build image tiles
 		
 		$(this.html).addClass("img_wrap").css({
@@ -243,7 +227,7 @@ var img = {
 		})
 		
 		
-		for(var i = 0; i < this.chunks.length; i++) {
+		for(var i = 0, l = this.chunks.length; i < l; i++) {
 	
 			if (img.opjitter == "on") img.opacity = Math.random();
 			
