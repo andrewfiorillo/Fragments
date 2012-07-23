@@ -17,7 +17,7 @@ body {
 	overflow: auto;
 	z-index: 200;
 	border-right: 1px solid #ddd;
-	box-shadow: 0 0 4px rgba(0,0,0,0.15);
+	box-shadow: 0 0 3px rgba(0,0,0,0.15);
 }
 .closed #sidebar {
 	display: none;
@@ -47,11 +47,13 @@ body {
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 	color: #aaa;
 	border: 1px solid #ddd;
+	border-top: 1px solid #d6d6d6;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
 }
 #randoform input[type=text]:focus,
 #randoform input[type=number]:focus {
 	outline: 0;
+	border: 1px solid #78b4ff;
 }
 #randoform input[type=number]::-webkit-inner-spin-button {
 	font-size: 20px;
@@ -72,6 +74,7 @@ body {
 	height: 28px;
 	padding-bottom: 1px;
 	border: 1px solid #ddd;
+	border-bottom: 1px solid #d6d6d6;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.075);
 }
 #randoform input[type=submit]:hover,
@@ -147,7 +150,7 @@ body {
 	margin-right: 3px;
 }
 #randoform .miniColors-trigger {
-	/* display: none; */
+	
 }
 .note {
 	font-size: 11px;
@@ -204,9 +207,18 @@ body {
 	border-top: 1px solid #ddd;
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
+	box-shadow: 0 0 3px rgba(0,0,0,0.15);
 }
 #control_toggle:active {
 	background: #f9f9f9;
+}
+#control_toggle .cover {
+	background: white;
+	width: 5px;
+	height: 40px;
+	position: absolute;
+	left: -5px;
+	top: -6px;
 }
 .closed #control_toggle {
 	left: 0;

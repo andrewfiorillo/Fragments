@@ -1,14 +1,13 @@
 .miniColors-trigger {
 	height: 11px;
 	width: 11px;
-	/* background: url(../images/trigger.png) center no-repeat; */
 	vertical-align: middle;
 	margin: 0 .25em;
 	display: inline-block;
 	outline: none;
 
 	margin-top: -3px;
-	box-shadow: 0 0 3px rgba(0,0,0,0.2)
+	box-shadow: 0 0 3px rgba(0,0,0,0.4)
 }
 
 .miniColors-selector {
