@@ -17,13 +17,15 @@ var util = {
 };
 
 
-$.fn.imagesLoaded = function(callback){
+$.fn.imagesLoaded = function(callback) {
 	
-	var elems = this.filter('img'),
-		len   = elems.length;
+	var elems	= this.filter('img'),
+		len		= elems.length;
 		
-	elems.bind('load',function(){ if (--len <= 0) callback.call(elems,this); }).each(function(){
-		if (this.complete || this.complete === undefined){
+	elems.bind('load', function() {
+		if (--len <= 0) callback.call(elems,this); 
+	}).each(function(){
+		if (this.complete || this.complete === undefined) {
 			var src = this.src;
 			this.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 			this.src = src;

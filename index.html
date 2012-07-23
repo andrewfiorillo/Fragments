@@ -47,59 +47,39 @@
 			
 			<div class="field">
 				<label for="imagesize">Image size <!-- <strong class="count">400</strong> --></label>
-				<input type="text" name="imagesize" id="imagesize" class="plain" value="500" />
-				<!-- <div class="slider_wrapper">
-					<div id="imagesize_slider" class="slider_control"></div>
-				</div> -->
+				<input type="number" name="imagesize" id="imagesize" class="plain" value="500" />
 			</div>
 			
 			<div class="field">
 				<label for="tilesize">Tile size <!-- <strong class="count">80</strong> --></label>
-				<input type="text" name="tilesize" id="tilesize" class="plain" value="50" />
-				<!-- <div class="slider_wrapper">
-					<div id="tilesize_slider" class="slider_control"></div>
-				</div> -->
+				<input type="number" name="tilesize" id="tilesize" class="plain" value="50" />
 			</div>
 			
 			<div class="field">
-				<label>Margin: <strong class="count">5</strong></label>
-				<input type="hidden" name="tilemargin" id="tilemargin" class="plain" value="5" />
-				<div class="slider_wrapper">
-					<div id="margin_slider" class="slider_control"></div>
-				</div>
+				<label>Margin</label>
+				<input type="number" name="tilemargin" id="tilemargin" class="plain" value="5" />
 			</div>
 			
 			<div class="field">
-				<label>Border-radius: <strong class="count">0</strong></label>
-				<input type="hidden" name="radius" id="radius" class="plain" value="0" />
-				<div class="slider_wrapper">
-					<div id="radius_slider" class="slider_control"></div>
-				</div>
+				<label>Border-radius</label>
+				<input type="number" name="radius" id="radius" class="plain" value="0" />
 			</div>
 			
 			<div class="field">
 				<label style="display:inline-block">Tint: <strong class="count">0%</strong> &nbsp;Color:</label>
 				<input type="hidden" name="tiletint" id="tiletint" class="plain" value="red" />
-				<input type="hidden" name="tiletintop" id="tiletintop" class="plain" value="0" />
-				<div class="slider_wrapper">
-					<div id="tiletintop_slider" class="slider_control"></div>
-				</div>
+				<br />
+				<input type="number" name="tiletintop" id="tiletintop" class="plain" value="0" />
 			</div>
 			
 			<div class="field">
-				<label>Rotate: <strong class="count">0</strong></label>
-				<input type="hidden" name="rotate" id="rotate" class="plain" value="0" />
-				<div class="slider_wrapper">
-					<div id="rotate_slider" class="slider_control"></div>
-				</div>
+				<label>Rotate</label>
+				<input type="number" name="rotate" id="rotate" class="plain" value="0" />
 			</div>
 			
 			<div class="field" style="display:none;" id="blurfield">
-				<label>Blur: <strong class="count">0</strong></label>
-				<input type="hidden" name="blur" id="blur" class="plain" value="0" />
-				<div class="slider_wrapper">
-					<div id="blur_slider" class="slider_control"></div>
-				</div>
+				<label>Blur</label>
+				<input type="number" name="blur" id="blur" class="plain" value="0" />
 			</div>
 			
 			<div class="field radio">

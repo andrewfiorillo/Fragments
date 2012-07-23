@@ -6,14 +6,13 @@ var img = {
 		
 		this.getParams();
 		this.colors();
-		this.sliders();
 		this.radios();
 		this.listen();
 		this.keyboard();
 		this.presets();
 		this.controlsToggle();
 		
-		if($.browser.mozilla) $('#blurfield').show();
+		if ($.browser.mozilla) $('#blurfield').show();
 		
 		$("#randosubmit").click();
 
@@ -43,15 +42,15 @@ var img = {
 		this.columns	= this.imagesize / this.tilesize;
 		this.totalwidth	= parseInt(this.imagesize) + (this.columns * this.tilemargin);
 		
-		this.chunks = [];
-		this.opacity = 1;
-		this.blurclass = "";
-		this.bgsize = "";
-		this.width = "";
-		this.height = "";
-		this.html = document.createElement("div");
-		this.tmp_img = $('<img />');
-		
+		this.chunks		= [];
+		this.opacity	= 1;
+		this.blurclass	= "";
+		this.bgsize		= "";
+		this.width		= "";
+		this.height		= "";
+		this.html		= document.createElement("div");
+		this.tmp_img	= $('<img />');
+
 	},
 	
 	
@@ -61,13 +60,16 @@ var img = {
 		$("#randoform").submit(function(){
 		
 			// get all the form values	
+			
 			img.vars();
 			
 			// set url params
+			
 			img.setParams();
 			
 			// if image is cached go ahead and build, otherwise wait for it to load, then build		
-			if(util.cached(img.url)) {
+			
+			if (util.cached(img.url)) {
 				$(img.tmp_img).attr("src", img.url)
 				img.width	= img.tmp_img[0].naturalWidth
 				img.height	= img.tmp_img[0].naturalHeight;
@@ -75,14 +77,13 @@ var img = {
 			}
 			else {
 				$(img.tmp_img).attr("src", img.url).imagesLoaded(function() {
-					img.width 	= img.tmp_img[0].naturalWidth;
+					img.width	= img.tmp_img[0].naturalWidth;
 					img.height	= img.tmp_img[0].naturalHeight;
 					img.build();
 				});
 			}
 			
 			return false;
-			
 		});
 	},
 	
@@ -91,7 +92,7 @@ var img = {
 		var pairs = window.location.hash.replace("#","").split("&"),
 			params = {};
 		
-		for(var i=0; i < pairs.length; i++) {
+		for(var i = 0; i < pairs.length; i++) {
 			var pair = pairs[i].split("=");
 			params[pair[0]] = pair[1];
 		}
@@ -100,20 +101,14 @@ var img = {
 		var radios = ["opjitter", "random"];
 		
 		for(var i = 0; i < sliders.length; i++) {
-			if(params[sliders[i]]) {
-				$("#" + sliders[i])
-					.val(params[sliders[i]])
-					.prev("label")
-					.children(".count")
-					.text(params[sliders[i]]);
-			}
+			if(params[sliders[i]]) $("#" + sliders[i]).val(params[sliders[i]]);
 		}
 		
-		if(params.opjitter)	{
+		if (params.opjitter)	{
 			if (params.opjitter == "on") $("#opjitteron").attr('checked', true);
 			else $("#opjitteroff").attr('checked', true);
 		}
-		if(params.random)	{
+		if (params.random)	{
 			if (params.random == "on") $("#randomon").attr('checked', true);
 			else $("#randomoff").attr('checked', true);
 		}
@@ -139,8 +134,8 @@ var img = {
 
 		var paramStr = "";
 		
-		for (var i=0; i<params.length; i++) {
-			if(i>0 ) paramStr += "&";
+		for (var i = 0; i < params.length; i++) {
+			if (i > 0 ) paramStr += "&";
 			paramStr += params[i].key + "=" + params[i].val;
 		}
 		
@@ -173,66 +168,10 @@ var img = {
 	keyboard: function() {
 		$(document).keypress(function(e) {
 			var code = (e.keyCode ? e.keyCode : e.which);
-			if(code == 13) {
+			if (code == 13) {
 				$("#randosubmit").click();
 			}
 		});	
-	},
-	
-	// set up sliders
-	
-	sliders: function() {
-		
-		$("#margin_slider").slider({
-			value: $("#tilemargin").val() || 0,
-			min: -50,
-			max: 50,
-			step: 1,
-			slide: function( event, ui ) {
-				$("#tilemargin").val(ui.value).prev("label").children(".count").text(ui.value);
-			}
-		});
-		
-		$("#radius_slider").slider({
-			value: $("#radius").val() || 0,
-			min: 0,
-			max: 100,
-			step: 5,
-			slide: function( event, ui ) {
-				$("#radius").val(ui.value).prev("label").children(".count").text(ui.value);
-			}
-		});
-		
-		$("#tiletintop_slider").slider({
-			value: $("#tiletintop").val() || 0,
-			min: 0,
-			max: 1,
-			step: 0.1,
-			slide: function( event, ui ) {
-				$("#tiletintop").val(ui.value).parent().children("label").children(".count").text((ui.value * 100) + "%" );
-			}
-		});
-		
-		$("#rotate_slider").slider({
-			value: $("#rotate").val() || 0,
-			min: 0,
-			max: 360,
-			step: 15,
-			slide: function( event, ui ) {
-				$("#rotate").val(ui.value).prev("label").children(".count").text(ui.value);
-			}
-		});
-		
-		$("#blur_slider").slider({
-			value: $("#blur").val() || 0,
-			min: 0,
-			max: 50,
-			step: 1,
-			slide: function( event, ui ) {
-				$("#blur").val(ui.value).prev("label").children(".count").text(ui.value);
-			}
-		});
-			
 	},
 	
 
@@ -259,8 +198,8 @@ var img = {
 	
 		// build image tiles array
 		
-		for(var i=0; i < this.rows; i++) {
-			for(var n=0; n < this.columns; n++) {
+		for(var i = 0; i < this.rows; i++) {
+			for(var n = 0; n < this.columns; n++) {
 				var xpos = n * this.tilesize;
 				var ypos = i * this.tilesize;
 				this.chunks.push({x:xpos,y:ypos});
@@ -276,12 +215,12 @@ var img = {
 		
 		// option: randomize tiles
 		
-		if(this.random == "on") util.shuffle(this.chunks);
+		if (this.random == "on") util.shuffle(this.chunks);
 		
 
 		// option: blur (firefox only)
 		
-		if(parseInt(this.blur) > 0) {			
+		if (parseInt(this.blur) > 0) {			
 			this.blurclass = "blur";
 			$("#svgblur").html('\
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height:0;">\
@@ -304,9 +243,9 @@ var img = {
 		})
 		
 		
-		for(var i=0; i < this.chunks.length; i++) {
+		for(var i = 0; i < this.chunks.length; i++) {
 	
-			if(img.opjitter == "on") img.opacity = Math.random();
+			if (img.opjitter == "on") img.opacity = Math.random();
 			
 			var tile = document.createElement("div"),
 				tilebg = document.createElement("div"),
