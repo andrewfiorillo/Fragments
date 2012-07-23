@@ -106,14 +106,15 @@ body {
 }
 #randoform span.more:hover {
 	background: #999;
+	border: 1px solid #999;
 }
 #randoform span.more #more_list {
 	background: #999;
 	padding: 15px;
 	position: absolute;
-	right: 0;
+	right: -1px;
 	top: 26px;
-	min-width: 155px;
+	min-width: 170px;
 	text-align: left;
 	line-height: 20px;
 	font-size: 12px;
